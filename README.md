@@ -3,7 +3,7 @@ This project was generated with Angular CLI
 
 - Steps to run Project
 1. clone repository.
-2. Run Angular 5 Project[i.e sample-demo] using ng serve
+2. Run Angular 5 Project[i.e Angular5Demo] using ng serve
 
 - For Backend
 1. Open solution file from folder [i.e WebApplicationDemo]
