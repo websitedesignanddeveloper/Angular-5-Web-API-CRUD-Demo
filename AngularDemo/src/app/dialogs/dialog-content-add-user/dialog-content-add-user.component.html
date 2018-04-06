@@ -1,0 +1,44 @@
+<div class="test">
+  <mat-toolbar  class="dilog-toolbar">
+    <h1 class="example-app-name">{{data.diloagName}}</h1>
+  </mat-toolbar>
+  <mat-card>
+
+      <div *ngIf="errorMsg">
+          <span>{{ errorMsg }}</span>
+      </div>
+
+      <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+        <div *ngIf="data.profile" >
+          <img src={{data.profile}} class="img">
+        </div>
+      <mat-dialog-content>
+
+          <mat-form-field>
+            <input type="text" matInput placeholder="First Name" name="First Name" [(ngModel)]="data.firstName"  required/>
+            <mat-error *ngIf="formControl.invalid">First Name is <strong>required</strong></mat-error>
+          </mat-form-field>
+        
+          <mat-form-field>
+            <input type="text" matInput placeholder="Last Name" name="Last Name" [(ngModel)]="data.lastName" required/>
+            <mat-error *ngIf="formControl.invalid">Last Name is <strong>required</strong></mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="text" matInput placeholder="Office location" name="Office" [(ngModel)]="data.office" required/>
+            <mat-error *ngIf="formControl.invalid">Office location is <strong>required</strong></mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input type="text" matInput placeholder="Position" name="Position" [(ngModel)]="data.position"  required/>
+              <mat-error *ngIf="formControl.invalid">Position is <strong>required</strong></mat-error>
+          </mat-form-field>
+      </mat-dialog-content>
+
+       <mat-dialog-actions>
+          <button mat-button mat-dialog-close>Cancel</button>
+          <button  mat-button  [mat-dialog-close]="true" (click)="onAdd(data)" [disabled]="!formControl.valid" >{{data.diloagButton}}</button>
+        </mat-dialog-actions>
+      </form>
+  </mat-card>
+</div>
